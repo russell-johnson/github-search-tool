@@ -3,6 +3,7 @@ import axios from 'axios';
 import { MapPinIcon, LinkIcon, BuildingOfficeIcon } from '@heroicons/react/24/solid';
 import Card from './components/Card';
 import DarkModeControl from './components/DarkModeControl';
+import twitter from './assets/twitter.svg';
 interface UserData {
   name: string;
   login: string;
@@ -110,6 +111,7 @@ const UserSearch: React.FC = () => {
                   <span>{userData.location || 'Not Available'}</span>
                 </div>
                 <div className="text-sm inline-flex space-x-4 mt-4">
+                  <img className='h-5 text-standard' src={twitter}/>
                   {userData.twitter_username ? <a target='_blank' href={`https://twitter.com/${userData.twitter_username}`}>Twitter</a> : <span>Not Available</span>}
                 </div>
               </div>
