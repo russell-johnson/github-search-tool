@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { SunIcon, MoonIcon, MapPinIcon, LinkIcon, BuildingOfficeIcon } from '@heroicons/react/24/solid';
+import { MapPinIcon, LinkIcon, BuildingOfficeIcon } from '@heroicons/react/24/solid';
 import Card from './components/Card';
 import DarkModeControl from './components/DarkModeControl';
 interface UserData {
@@ -19,7 +19,7 @@ interface UserData {
   public_repos: number;
 }
 
-const UserSearch: React.FC= () => {
+const UserSearch: React.FC = () => {
   const [username, setUsername] = useState<string>('');
   const [userData, setUserData] = useState<UserData | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -74,52 +74,52 @@ const UserSearch: React.FC= () => {
         </button>
       </Card>
       {userData && (
-       <Card className='py-12 px-8 flex'>
-       <div className="overflow-hidden">
-         <img src={userData.avatar_url} alt='User Avatar' className='w-40 h-40 object-cover rounded-full' />
-       </div>
-       <div className='w-3/4 ml-6 text-standard'>
-         <div className="flex justify-between">
-           <div>
-             <h1>{userData.name || userData.login}</h1>
-             <a className="text-button text-sm" target='_blank' href={userData.html_url}>@{userData.login}</a>
-           </div>
-           <div>
-             <small>Joined: {new Date(userData.created_at).toLocaleDateString()}</small>
-           </div>
-         </div>
-         <p className='text-sm py-4'>{userData.bio || 'This profile has no bio'}</p>
-         <div className='bg-accent rounded-md p-2 px-6 flex justify-between w-full'>
-           <div className="flex flex-col">
-             <small>Repos</small>
-             <div className='text-lg'>{userData.public_repos}</div>
-           </div>
-           <div className="flex flex-col">
-             <small>Followers</small>
-             <div className='text-lg'>{userData.followers}</div>
-           </div>
-           <div className="flex flex-col">
-             <small>Following</small>
-             <div className='text-lg'>{userData.following}</div>
-           </div>
-         </div>
-        <div className="mt-6">
-          <div className='flex justify-between mt-4'>
-            <div className="text-sm inline-flex space-x-4 mt-4">
-              <MapPinIcon className='h-5'/> 
-              <span>{userData.location || 'Location: Not Available'}</span>
+        <Card className='py-12 px-8 flex'>
+          <div className="overflow-hidden">
+            <img src={userData.avatar_url} alt='User Avatar' className='w-40 h-40 object-cover rounded-full' />
+          </div>
+          <div className='w-3/4 ml-6 text-standard'>
+            <div className="flex justify-between">
+              <div>
+                <h1>{userData.name || userData.login}</h1>
+                <a className="text-button text-sm" target='_blank' href={userData.html_url}>@{userData.login}</a>
+              </div>
+              <div>
+                <small>Joined: {new Date(userData.created_at).toLocaleDateString()}</small>
+              </div>
             </div>
-            <div className="text-sm inline-flex space-x-4 mt-4">
-              {userData.twitter_username ? <a target='_blank' href={`https://twitter.com/${userData.twitter_username}`}>Twitter</a> : 'Not Available'}
+            <p className='text-sm py-4'>{userData.bio || 'This profile has no bio'}</p>
+            <div className='bg-accent rounded-md p-2 px-6 flex justify-between w-full'>
+              <div className="flex flex-col">
+                <small>Repos</small>
+                <div className='text-lg'>{userData.public_repos}</div>
+              </div>
+              <div className="flex flex-col">
+                <small>Followers</small>
+                <div className='text-lg'>{userData.followers}</div>
+              </div>
+              <div className="flex flex-col">
+                <small>Following</small>
+                <div className='text-lg'>{userData.following}</div>
+              </div>
+            </div>
+            <div className="mt-6">
+              <div className='flex justify-between mt-4'>
+                <div className="text-sm inline-flex space-x-4 mt-4">
+                  <MapPinIcon className='h-5' />
+                  <span>{userData.location || 'Not Available'}</span>
+                </div>
+                <div className="text-sm inline-flex space-x-4 mt-4">
+                  {userData.twitter_username ? <a target='_blank' href={`https://twitter.com/${userData.twitter_username}`}>Twitter</a> : <span>Not Available</span>}
+                </div>
+              </div>
+              <div className='flex justify-between'>
+                <div className="text-sm inline-flex space-x-4 mt-4"><LinkIcon className='h-5' />{userData.blog ? <a target='_blank' className='text-standard' href={userData.blog}>{userData.blog}</a> : <span>Not Available</span>}</div>
+                <div className="text-sm inline-flex space-x-4 mt-4"><BuildingOfficeIcon className='h-5' /> <span>{userData.company || 'Not Available'}</span></div>
+              </div>
             </div>
           </div>
-          <div className='flex justify-between'>
-            <div className="text-sm inline-flex space-x-4 mt-4"><LinkIcon className='h-5'/>{userData.blog ? <a  target='_blank' className='text-standard' href={userData.blog}>{userData.blog}</a> : ' Not Available'}</div>
-            <div className="text-sm inline-flex space-x-4 mt-4"><BuildingOfficeIcon className='h-5'/> {userData.company ?<span>{userData.company || ' Not Available'}</span>: 'Not Available'}</div>
-          </div>
-         </div>
-       </div>
-     </Card>
+        </Card>
       )}
     </div>
   );
