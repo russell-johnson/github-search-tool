@@ -29,6 +29,7 @@ h2 {
 h3 {
   font-size: 16px;
   line-height: 24px;
+  font-weight: 700;
 }
 
 h4 {
@@ -39,24 +40,10 @@ h4 {
 .light {
   --button: 0, 121, 255;
   --text: 105, 124, 154;
-  --main: 75, 106, 155;
-  --card: 43, 52, 66;
-}
-
-.dark .light-on {
-  display: none;
-}
-
-.light-on {
-  display: block
-}
-
-.light-on {
-  display: block
-}
-
-.light .dark-on {
-  display: none;
+  --main:  255, 255, 255;
+  --card: 254, 254, 254;
+  --texthover: 43, 52, 66;
+  --shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .dark {
@@ -64,7 +51,18 @@ h4 {
   --text: 255, 255, 255;
   --main: 20, 29, 47;
   --card: 30, 42, 71;
+  --texthover: 105, 124, 154;
 }
+
+.dark .light-on {
+  display: none;
+}
+
+.light .dark-on {
+  display: none;
+}
+
+
 
 /* button: '#0079FF',
 card: '#697C9A',
