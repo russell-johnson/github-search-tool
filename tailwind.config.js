@@ -10,8 +10,9 @@ module.exports = {
     
       colors: {
         button: 'rgba(var(--button))',
-        text:'rgba(var(--text))',
+        standard:'rgba(var(--text))',
         main: 'rgba(var(--main))',
+        accent: 'rgba(var(--accent))',
         card: 'rgba(var(--card))',
         hover:'rgba(var(--texthover))',
       },
