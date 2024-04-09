@@ -4,17 +4,76 @@
 
 
 #root {
-  height: 100vh; 
+  height: 100vh;
+  font-family: 'Space Mono', monospace; 
 }
 
 .App {
   text-align: center;
   height: 100vp;
+  font-family: 'Space Mono', monospace; 
 }
 
+h1 {
+  font-size: 26px;
+  line-height: 38px;
+  font-weight: bold;
+}
 
+h2 {
+  font-size: 22px;
+  line-height: 33px;
+  font-weight: bold;
+}
 
+h3 {
+  font-size: 16px;
+  line-height: 24px;
+}
 
+h4 {
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.light {
+  --button: 0, 121, 255;
+  --text: 105, 124, 154;
+  --main: 75, 106, 155;
+  --card: 43, 52, 66;
+}
+
+.dark .light-on {
+  display: none;
+}
+
+.light-on {
+  display: block
+}
+
+.light-on {
+  display: block
+}
+
+.light .dark-on {
+  display: none;
+}
+
+.dark {
+  --button: 0, 121, 255;
+  --text: 255, 255, 255;
+  --main: 20, 29, 47;
+  --card: 30, 42, 71;
+}
+
+/* button: '#0079FF',
+card: '#697C9A',
+dullBlue: '',
+charcoal: '',
+darkCharcoal: '',
+darkSlate: ''
+
+ */
 
 
 
